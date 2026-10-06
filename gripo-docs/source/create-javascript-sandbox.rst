@@ -396,10 +396,6 @@ ready to run scripts, install npm packages, and be used as a step inside
 your workflows.
 
 --------------
-
-Quick Recap
------------
-
 Quick Recap
 -----------
 

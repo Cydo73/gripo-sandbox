@@ -476,8 +476,6 @@ ready to run scripts, install packages, and be used as a step inside
 your workflows.
 
 --------------
-
-
 Quick Recap
 -----------
 

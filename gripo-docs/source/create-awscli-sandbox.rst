@@ -301,8 +301,6 @@ AWS CLI sandbox will appear in the **Available Sandboxes** list, ready
 to run AWS commands once you've added your credentials.
 
 --------------
-
-
 Quick Recap
 -----------
 
