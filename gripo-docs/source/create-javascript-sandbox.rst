@@ -3,15 +3,14 @@ Create a JavaScript Sandbox
 
 A sandbox is an isolated container where your code runs on its own,
 separate from everything else in your system. Nothing it does can affect
-your other workflows, your other sandboxes, or GRiPOFlow itself. This
+your other workflows, your other sandboxes, or GRiPO itself. This
 guide walks through creating a JavaScript sandbox from scratch,
 explaining what every field and option actually does, so you understand
 not just *what* to click but *why* you're clicking it.
 
 This tutorial assumes no prior sandbox experience. If a term is
 unfamiliar, it gets explained the first time it shows up. It follows the
-same wizard as the `Python sandbox
-guide <./create-python-sandbox.md>`__, the steps are identical, only the
+same wizard as the :doc:`Python sandbox guide <create-python-sandbox>`, the steps are identical, only the
 language-specific choices change.
 
 --------------
@@ -22,7 +21,7 @@ Step 1 of 5: Basic Information
 .. image:: ./images/js-01-basic-information.png
    :alt: Basic Information step for a JavaScript sandbox
 
-This is where you tell GRiPOFlow what the sandbox is and what it's for.
+This is where you tell GRiPO what the sandbox is and what it's for.
 Every field here shapes how the sandbox behaves later.
 
 Name (required)
@@ -60,7 +59,7 @@ changes depending on Type.
 Language *(type dependent)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Choose **JavaScript**. This tells GRiPOFlow what runtime to expect, and
+Choose **JavaScript**. This tells GRiPO what runtime to expect, and
 it feeds directly into the automatic image suggestion in Step 2.
 
 **Worth knowing:** unlike Python, which runs directly on a machine,
@@ -81,7 +80,7 @@ file, gets cut off before it finishes.
 
 **What happens if you set it too high:** if a script hangs or gets stuck
 (for example waiting on a request that never resolves), it keeps
-consuming resources for the full duration before GRiPOFlow stops it,
+consuming resources for the full duration before GRiPO stops it,
 instead of failing fast.
 
 Backend
@@ -131,8 +130,7 @@ Step 2 of 5: Image
 ------------------
 
 .. image:: ./images/js-03-image-configuration.png
-   :alt: Image configuration step, searching Docker Hub for a Node.js
-   image
+   :alt: Image configuration step, searching Docker Hub for a Node.js image
 
 This step decides exactly what software environment your sandbox boots
 into. You get three options:
@@ -140,7 +138,7 @@ into. You get three options:
 Predefined (Our Images)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Marked as **Recommended**. GRiPOFlow automatically picks a suitable
+Marked as **Recommended**. GRiPO automatically picks a suitable
 image based on the Type and Language you selected in Step 1, in this
 case, a ready-to-go Node.js environment.
 
@@ -178,7 +176,7 @@ Dockerfile *(New)*
 ~~~~~~~~~~~~~~~~~~
 
 Lets you write or upload your own Dockerfile, a script that defines a
-completely custom environment, which GRiPOFlow builds before the sandbox
+completely custom environment, which GRiPO builds before the sandbox
 boots.
 
 **What happens if you use this:** complete control, install any system
@@ -228,8 +226,6 @@ partway through.
 
 **What happens if it's higher than needed:** the script runs fine, but
 you're reserving more memory than necessary.
-
-.. _cpu-:
 
 CPU (%)
 ~~~~~~~
@@ -334,7 +330,7 @@ SSH Enable
 A toggle that turns direct SSH access to the sandbox on or off.
 
 **What happens if it's Off (default):** you can only interact with the
-sandbox through GRiPOFlow itself, its built-in terminal, or through
+sandbox through GRiPO itself, its built-in terminal, or through
 workflows.
 
 **What happens if you turn it On:** you can connect to the running
@@ -435,4 +431,3 @@ wizard is: **Code → JavaScript → Predefined image (or Custom with the
 official node image) → User (not Root) → Privileged: False → skip
 environment variables for now → leave Advanced settings at their
 defaults.** You can always come back and adjust any of these later.
-.\make.bat html

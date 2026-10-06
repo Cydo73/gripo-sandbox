@@ -3,7 +3,7 @@ Create a Python Sandbox
 
 A sandbox is an isolated container where your code runs on its own,
 separate from everything else in your system. Nothing it does can affect
-your other workflows, your other sandboxes, or GRiPOFlow itself. This
+your other workflows, your other sandboxes, or GRiPO itself. This
 guide walks through creating a Python sandbox from scratch, explaining
 what every field and option actually does, so you understand not just
 *what* to click but *why* you're clicking it.
@@ -29,7 +29,7 @@ along with a quick status view for each:
    so on).
 -  **Language**: the programming language or runtime it runs.
 -  **Status**: whether it's currently ``running`` or stopped.
--  **Built-in**: whether GRiPOFlow created it automatically (``Yes``),
+-  **Built-in**: whether GRiPO created it automatically (``Yes``),
    or a person created it manually (``No``). Built-in sandboxes are
    provided by the platform for common tasks; the ones you build
    yourself will show ``No`` here.
@@ -49,7 +49,7 @@ Step 1 of 5: Basic Information
 .. image:: ./images/02-basic-information.png
    :alt: Basic Information step
 
-This is where you tell GRiPOFlow what the sandbox is and what it's for.
+This is where you tell GRiPO what the sandbox is and what it's for.
 Every field here shapes how the sandbox behaves later, so it's worth
 understanding each one properly rather than rushing through it.
 
@@ -103,7 +103,7 @@ Language *(type dependent)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Only appears once you've selected a Type that supports it, like Code.
-Choose **Python** here. This tells GRiPOFlow what runtime to expect and,
+Choose **Python** here. This tells GRiPO what runtime to expect and,
 importantly, feeds into the automatic image suggestion in Step 2.
 
 Time (seconds)
@@ -118,7 +118,7 @@ partway through before it completes.
 
 **What happens if you set it too high:** if a script gets stuck in an
 infinite loop or hangs waiting on something, it will keep consuming
-resources for the full duration before GRiPOFlow stops it, instead of
+resources for the full duration before GRiPO stops it, instead of
 failing fast.
 
 A good rule of thumb: set this a bit above how long your script normally
@@ -182,7 +182,7 @@ code even runs. You get three options:
 Predefined (Our Images)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Marked as **Recommended**. GRiPOFlow automatically picks a suitable
+Marked as **Recommended**. GRiPO automatically picks a suitable
 image for you based on the Type and Language you selected in Step 1.
 
 **Best for:** beginners, or anyone who just wants "a working Python
@@ -220,7 +220,7 @@ Dockerfile *(New)*
 ~~~~~~~~~~~~~~~~~~
 
 Lets you write or upload your own Dockerfile, a script that defines a
-completely custom environment. GRiPOFlow builds this into a container
+completely custom environment. GRiPO builds this into a container
 image before the sandbox boots.
 
 **What happens if you use this:** you get complete control, install any
@@ -278,8 +278,6 @@ inefficiency if you're running many sandboxes at once.
 
 Match this to what your script actually needs. A basic script doing
 simple calculations needs far less than one processing large files.
-
-.. _cpu-:
 
 CPU (%)
 ~~~~~~~
@@ -372,7 +370,7 @@ here:
 -  Click **Add your first variable** (or **Add a variable** in the top
    right) to define one now, for example a database password or a third
    party API key your script needs to call.
--  Or simply skip this step. GRiPOFlow explicitly allows this, you can
+-  Or simply skip this step. GRiPO explicitly allows this, you can
    always come back and add variables later once you know exactly what
    your script needs.
 
@@ -403,7 +401,7 @@ SSH Enable
 A toggle that turns direct SSH access to the sandbox on or off.
 
 **What happens if it's Off (default):** you can only interact with the
-sandbox through GRiPOFlow itself, its built-in terminal, or through
+sandbox through GRiPO itself, its built-in terminal, or through
 workflows. This is simpler and keeps the sandbox's attack surface
 smaller.
 
@@ -514,4 +512,3 @@ wizard is: **Code → Python → Predefined image → User (not Root) →
 Privileged: False → skip environment variables for now → leave Advanced
 settings at their defaults.** You can always come back and adjust any of
 these later.
-.\make.bat html

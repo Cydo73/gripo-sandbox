@@ -1,7 +1,7 @@
 # Configuration file for the Sphinx documentation builder.
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-project = "GripoFlow Sandbox Guides"
+project = "GRiPO Sandbox Guides"
 copyright = "2026, Mumpe Cydrone"
 author = "Mumpe Cydrone"
 release = "1.0"
@@ -14,9 +14,8 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # -- Options for HTML output ---------------------------------------------
 html_theme = "furo"
-html_static_path = ["_static"]
 
-html_title = "GripoFlow Sandbox Guides"
+html_title = "GRiPO Sandbox Guides"
 
 html_theme_options = {
     "sidebar_hide_name": False,

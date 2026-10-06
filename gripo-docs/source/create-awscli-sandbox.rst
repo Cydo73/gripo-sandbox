@@ -3,14 +3,14 @@ Create an AWS CLI Sandbox
 
 A sandbox is an isolated container where your code runs on its own,
 separate from everything else in your system. Nothing it does can affect
-your other workflows, your other sandboxes, or GRiPOFlow itself. This
+your other workflows, your other sandboxes, or GRiPO itself. This
 guide walks through creating an AWS CLI sandbox from scratch, explaining
 what every field and option actually does, so you understand not just
 *what* to click but *why* you're clicking it.
 
 This tutorial follows the same wizard as the
-`Python <./create-python-sandbox.md>`__ and
-`JavaScript <./create-javascript-sandbox.md>`__ sandbox guides, the
+:doc:`Python <create-python-sandbox>` and
+:doc:`JavaScript <create-javascript-sandbox>` sandbox guides, the
 steps are identical, but this one introduces a genuinely different Type
 and Image path, worth paying attention to since it's not just a language
 swap this time.
@@ -56,7 +56,7 @@ shell with the AWS CLI installed."
 Language *(type dependent)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set to **Bash**. Even though this isn't a "Code" sandbox, GRiPOFlow
+Set to **Bash**. Even though this isn't a "Code" sandbox, GRiPO
 still needs to know what shell environment to give you, since that's how
 you'll actually type and run AWS CLI commands (``aws s3 ls``,
 ``aws ec2 describe-instances``, and so on).
@@ -104,8 +104,7 @@ Step 2 of 5: Image
 ------------------
 
 .. image:: ./images/aws-02-image-configuration.png
-   :alt: Image configuration step, using a specific Docker Hub image and
-   tag for AWS CLI
+   :alt: Image configuration step, using a specific Docker Hub image and tag for AWS CLI
 
 This is the second real difference from the earlier guides. Instead of
 using Predefined or searching loosely, this example goes straight to a
@@ -117,12 +116,12 @@ Custom (Search Docker Hub)
 The **Docker Hub Image** field has ``dockereng/awscli`` typed in
 directly, this is a known, purpose-built image that comes with the AWS
 CLI already installed, maintained by the ``dockereng`` organisation on
-Docker Hub. Once selected, GRiPOFlow confirms it under the field as
+Docker Hub. Once selected, GRiPO confirms it under the field as
 **"Selected: dockereng/awscli."**
 
 **Why go straight to a specific image instead of Predefined:**
 Predefined works well for general-purpose languages like Python or
-JavaScript, where GRiPOFlow can guess a sensible default. AWS CLI is a
+JavaScript, where GRiPO can guess a sensible default. AWS CLI is a
 specific tool, not a language, so there usually isn't a generic
 "predefined" match for it, you need an image that was actually built to
 include the AWS CLI binary and its dependencies.
@@ -149,7 +148,7 @@ changes. This matters more once you're relying on a sandbox for real,
 repeated workflows, since an unexpected AWS CLI version bump could
 change command behaviour or output format under you.
 
-Underneath, GRiPOFlow shows the fully resolved reference:
+Underneath, GRiPO shows the fully resolved reference:
 **``dockereng/awscli:latest``**, this is the exact image and version
 your sandbox will actually pull and run, worth double checking before
 moving on.
@@ -186,8 +185,6 @@ through.
 
 **What happens if it's higher than needed:** the sandbox runs fine, but
 reserves more memory than a typical AWS CLI command actually needs.
-
-.. _cpu-:
 
 CPU (%)
 ~~~~~~~
@@ -262,7 +259,7 @@ SSH Enable
 ~~~~~~~~~~
 
 Off by default here, same trade-off as the other guides: off keeps you
-working through GRiPOFlow's own interface and terminal; on gives you
+working through GRiPO's own interface and terminal; on gives you
 direct SSH access for interactive debugging, only worth enabling if you
 specifically need it.
 
@@ -317,17 +314,17 @@ Quick Recap
      - What you're deciding
      - Beginner safe default
    * - Step 1: Basic Information
-     - Name, description, and the sandbox Type that lets you run AWS CLI commands
+     - Name, description, and the Type, which is **Custom** here rather than Code
      - Leave Backend as Docker and Worker Limit at 1
    * - Step 2: Image
-     - Which environment the sandbox boots into, and whether the AWS CLI is already installed in it
-     - Use **Predefined**, or **Custom** with the official ``amazon/aws-cli`` image
+     - Which tool image the sandbox boots into, and which version tag
+     - Use **Custom** with ``dockereng/awscli``, and pin a version tag once you rely on it
    * - Step 3: Resources
      - How much CPU and RAM it gets, and how locked down it is
      - Keep **User** (not Root) and **Privileged: False**
    * - Step 4: Environment Variables
      - Your AWS credentials and default region, kept out of your commands and scripts
-     - Add your access key, secret key and region here. Never type them into a script
+     - Add your access key ID and secret access key here. Never type them into a script
    * - Step 5: Advanced
      - SSH access, logging, GitHub, storage
      - Leave SSH off and Volumes unset unless you specifically need persistence
@@ -339,4 +336,3 @@ general-purpose language runtime. Everything else, Resources,
 Environment Variables, and Advanced, follows the exact same logic as
 before, just with AWS credentials raising the stakes on getting the
 security defaults right.
-.\make.bat html
